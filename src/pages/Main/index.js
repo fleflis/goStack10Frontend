@@ -1,5 +1,3 @@
-/* eslint-disable react/no-access-state-in-setstate */
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
 
@@ -16,6 +14,26 @@ export default class Main extends Component {
     };
   }
 
+  // Carregar os dados do LocalStorage
+  componentDidMount() {
+    const repositories = localStorage.getItem('repositories');
+
+    if (repositories) {
+      this.setState({
+        repositories: JSON.parse(repositories),
+      });
+    }
+  }
+
+  // Salvar os dados no LocalStorage
+  componentDidUpdate(_, prevState) {
+    const { repositories } = this.state;
+
+    if (prevState.repositories !== repositories) {
+      localStorage.setItem('repositories', JSON.stringify(repositories));
+    }
+  }
+
   handleInputChange = e => {
     this.setState({ newRepo: e.target.value });
   };
@@ -24,7 +42,7 @@ export default class Main extends Component {
     e.preventDefault();
     this.setState({ loading: true });
 
-    const { newRepo } = this.state;
+    const { newRepo, repositories } = this.state;
 
     const response = await api.get(`/repos/${newRepo}`);
 
@@ -33,7 +51,7 @@ export default class Main extends Component {
     };
 
     this.setState({
-      repositories: [...this.state.repositories, data],
+      repositories: [...repositories, data],
       newRepo: '',
       loading: false,
     });
@@ -69,7 +87,7 @@ export default class Main extends Component {
           {repositories.map(repository => (
             <li key={repository.name}>
               <span>{repository.name}</span>
-              <a href="">Detalhes</a>
+              <a href="#root">Detalhes</a>
             </li>
           ))}
         </List>
