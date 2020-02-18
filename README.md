@@ -1,5 +1,5 @@
 
-<h3 align="center">GoBarber - Front-end</h3>
+<h3 align="center">Github Issues - React sample project</h3>
 
 <div align="center">
 
@@ -10,7 +10,7 @@
 
 ---
 
-<p align="center"> Front-end da aplicação GoBarber, feito no bootcamp Gostack.
+<p align="center"> Uma aplicação de react simples, de listagem de issues nos repositórios do github
   <br>
 </p>
 
@@ -24,7 +24,7 @@
 
 ## 🧐 Sobre <a name = "about"></a>
 
-Um projeto de agendamentos de serviços de beleza. Outros repositórios estão disponíveis, sendo eles o [backend](https://github.com/fleflis/goStack10Backend) e o mobile (em breve). Todos estes projetos são feitos com a stack de Javascript (NodeJS, React, React Native).
+Um projeto simples para entender o funcionamento do react, utilizando alguns conceitos novos aprendidos nas aulas do bootcamp GoStack
 
 ## 🏁 Como utilizar <a name = "getting_started"></a>
 
@@ -39,7 +39,8 @@ Executar o projeto React com ```yarn start``` ou ```npm run start```
 
 ## ⛏️ Feito com <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
+- [Github](https://github.com/) - API de listagem de issues
+- [Styled Components](https://styled-components.com/) - Componentes estilizados com mais facilidade
 
 ## ✍️ Autores <a name = "authors"></a>
 
